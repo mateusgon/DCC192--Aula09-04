@@ -8,7 +8,7 @@
     <body>
         <h1>Nova Tarefa</h1>
         <form method="post">
-            <label>Titulo: <input name="titulo" /></label>
+            <label>Titulo: <input name="titulo" /> </label>
             <label>Descrição: <textarea name="descricao" rows="4"></textarea></label>
             <input type="submit"/>
             <input type="reset"/>

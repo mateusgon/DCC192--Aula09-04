@@ -13,12 +13,15 @@
         <table border="1">
             <tbody>
             <%
-            for(Tarefa tarefa: (List<Tarefa>)request.getAttribute("tarefas")){
+                List<Tarefa> tarefas = (List<Tarefa>)request.getAttribute("tarefas"); 
+            for(int i = 0; i < tarefas.size(); i++){
             %>
             <tr>
-                <td><%=tarefa.getConcluida()?"Concluída":"A fazer"%></td>
-                <td><%=tarefa.getTitulo()%></td>
-                <td><%=tarefa.getDescricao()%></td>
+                <td colspan="3"> <a href="atualizar.html?codigo=<%=i%>"> <%=tarefas.get(i).getConcluida()?"Concluída":"A fazer"%> </a> </td>
+                <td><%=tarefas.get(i).getTitulo()%></td>
+                <td><%=tarefas.get(i).getDescricao()%></td>
+                <td colspan="3"> <a href="editar.html?codigo=<%=i%>"> Editar </a> </td>
+                <td colspan="3"> <a href="excluir.html?codigo=<%=i%>"> Excluir </a> </td>
             </tr>
             <%
             }
